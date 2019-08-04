@@ -1,0 +1,375 @@
+@charset "UTF-8";
+/*-------------------------
+        R E S E T
+-------------------------*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+ul, ol {
+  list-style: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none; }
+
+blockquote, q {
+  quotes: none; }
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none; }
+
+ins {
+  text-decoration: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+/*-------------------------
+        R E S E T END
+-------------------------*/
+/*-------------------------
+            var
+-------------------------*/
+/*-------------------------
+          mixin
+-------------------------*/
+/*-------------------------
+          extend
+-------------------------*/
+/*-------------------------
+      function mixin
+-------------------------*/
+html, body {
+  font-family: "微軟正黑體", "Microsoft JhengHei", Arial;
+  font-size: 100%;
+  line-height: 1.5;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto; }
+
+.text-hide {
+  text-indent: -9999px; }
+
+.infinite {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite; }
+
+.mobile {
+  display: none; }
+  @media (min-width: 768px) and (max-width: 980px) {
+    .mobile {
+      display: block; } }
+  @media (max-width: 767px) {
+    .mobile {
+      display: block; } }
+
+.desk {
+  display: block; }
+  @media (min-width: 768px) and (max-width: 980px) {
+    .desk {
+      display: none; } }
+  @media (max-width: 767px) {
+    .desk {
+      display: none; } }
+
+.block {
+  display: block; }
+
+.wrap {
+  width: 1300px;
+  margin: 0 auto;
+  position: relative; }
+  @media (min-width: 981px) and (max-width: 1300px) {
+    .wrap {
+      width: 92%; } }
+  @media (min-width: 768px) and (max-width: 980px) {
+    .wrap {
+      width: 92%; } }
+  @media (max-width: 767px) {
+    .wrap {
+      width: 90%; } }
+
+.t-center {
+  width: 100%;
+  text-align: center; }
+
+.player:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Nunito Sans','微軟正黑體', sans-serif; }
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto; }
+
+body {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 85px 135px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #F5F5F5; }
+  @media screen and (max-width: 767px) {
+    body {
+      max-width: 90%;
+      display: block;
+      padding: 0; } }
+
+.main, .content {
+  width: calc(50% - 15px); }
+  @media screen and (max-width: 767px) {
+    .main, .content {
+      width: 100%; } }
+
+.main__pic {
+  width: 100%;
+  height: 540px;
+  background: url(../images/pop/richard-jaimes-jI5lCCGprgM-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  -webkit-box-shadow: -85px -40px #fff;
+          box-shadow: -85px -40px #fff; }
+
+.main h1 {
+  font-size: 64px;
+  text-decoration: underline;
+  letter-spacing: 1px; }
+  @media screen and (max-width: 980px) {
+    .main h1 {
+      font-size: 45px; } }
+  @media screen and (max-width: 767px) {
+    .main h1 {
+      font-size: 28px; } }
+
+.main h4 {
+  font-size: 32px;
+  display: inline-block;
+  margin-right: 85px;
+  line-height: 1.2; }
+
+.main .btn {
+  display: inline-block;
+  padding: 8px 40px;
+  border: 1px solid #000;
+  border-radius: 40px;
+  vertical-align: top;
+  cursor: pointer; }
+  .main .btn:hover {
+    background: #FF6C00;
+    border: 1px solid #FF6C00;
+    color: #fff;
+    -webkit-transition: 0.5S;
+    -o-transition: 0.5S;
+    transition: 0.5S; }
+
+.content h5 {
+  font-size: 24px;
+  margin-bottom: 16px; }
+
+.content .songList {
+  width: 100%;
+  margin-bottom: 32px; }
+  .content .songList tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+  .content .songList td {
+    vertical-align: middle;
+    position: relative; }
+    .content .songList td img {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%); }
+      .content .songList td img.pause {
+        display: none; }
+    .content .songList td.active img.pause {
+      display: block; }
+    .content .songList td.active img.play {
+      display: none; }
+  .content .songList td:nth-of-type(1) {
+    width: 96px; }
+  .content .songList td:nth-of-type(4) {
+    width: 24px;
+    cursor: pointer; }
+
+.content .newRelease {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-width: 100%;
+  font-size: 0;
+  line-height: 160px;
+  margin-bottom: 32px;
+  display: inline-block; }
+  .content .newRelease .album__cover {
+    vertical-align: middle; }
+  .content .newRelease__text {
+    display: inline-block;
+    text-align: center;
+    width: calc(100% - 160px);
+    vertical-align: middle; }
+    .content .newRelease__text p:nth-child(1) {
+      font-size: 20px;
+      line-height: 1.2; }
+    .content .newRelease__text p:nth-child(2) {
+      font-size: 16px;
+      line-height: 1.2; }
+
+.album__cover {
+  width: 160px;
+  height: 160px;
+  max-width: 100%;
+  display: inline-block; }
+
+.albums {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 32px; }
+  .albums__name {
+    font-weight: bold; }
+  .albums__year {
+    font-size: 14px; }
+
+.recommend {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .recommend .album__cover--round {
+    border-radius: 50%; }
+  .recommend__name {
+    display: block;
+    color: #000;
+    font-weight: bold;
+    text-align: center; }
+    .recommend__name:hover {
+      color: blue;
+      text-decoration: underline;
+      -webkit-transform: translateY(-1px);
+          -ms-transform: translateY(-1px);
+              transform: translateY(-1px);
+      -webkit-transition: 0.2s;
+      -o-transition: 0.2s;
+      transition: 0.2s; }
+
+.player {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 720px;
+  height: 96px;
+  background-color: gray;
+  display: inline-block; }
+  .player li {
+    position: relative;
+    float: left;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  .player__group1 {
+    width: 96px;
+    height: 100%;
+    background: url("../images/pop/photo-1512413914633-b5043f4041ea.jpg");
+    background-size: cover;
+    margin-right: 16px; }
+  .player__group2 {
+    margin-right: 110px; }
+    .player__group2 p:nth-child(1) {
+      font-size: 16px;
+      font-weight: bold; }
+    .player__group2 p:nth-child(2) {
+      font-size: 14px; }
+  .player__group3 {
+    margin-right: 67px; }
+    .player__group3:before, .player__group3:after {
+      display: inline-block;
+      content: "";
+      width: 24px;
+      height: 24px;
+      vertical-align: middle; }
+    .player__group3:before {
+      background: url("../images/pop/round-skip_previous-24px.svg"); }
+    .player__group3:after {
+      background: url("../images/pop/round-skip_next-24px.svg"); }
+    .player__group3 img {
+      width: 48px;
+      height: 48px;
+      vertical-align: middle;
+      margin: 0 16px; }
+  .player__group4:after {
+    display: inline-block;
+    content: '';
+    width: 90px;
+    height: 2px;
+    background: #fff;
+    vertical-align: middle;
+    margin-right: 16px; }
+  .player__group4 img {
+    vertical-align: middle; }
+  .player svg {
+    width: 24px;
+    height: 24px; }

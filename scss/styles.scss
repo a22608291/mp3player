@@ -1,0 +1,275 @@
+
+@import "reset";
+@import "_init";
+
+@mixin size($w,$h) {
+  width: $w;
+  height: $h;
+}
+%clearfix{
+  &:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+$font:64px 48px 36px 32px 24px 16px 14px;
+
+// 主要內容
+
+*{
+  // border: 1px solid #000;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans','微軟正黑體', sans-serif;
+}
+img{
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+body{
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 85px 135px;
+  display: flex;
+  justify-content: space-between;
+  background: #F5F5F5;
+  @media screen and (max-width: 767px) {
+    max-width: 90%;
+    display: block;
+    padding: 0;
+  }
+}
+.main,.content{
+  width:calc(50% - 15px);
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+}
+.main{
+  &__pic{
+    width: 100%;
+    height: 540px;
+    background: url(../images/pop/richard-jaimes-jI5lCCGprgM-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    box-shadow: -85px -40px #fff; 
+  }
+  h1{
+    font-size: nth($list: $font, $n:1 );
+    text-decoration:underline;
+    letter-spacing: 1px;
+    @media screen and (max-width: 980px) {
+      font-size: 45px;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 28px;
+    }
+  }
+  h4{
+    font-size: nth($list: $font, $n:4);
+    display: inline-block;
+    margin-right: 85px;
+    line-height: 1.2;
+  }
+  .btn{
+    display: inline-block;
+    padding: 8px 40px;
+    border: 1px solid #000;
+    border-radius: 40px;
+    vertical-align:top;
+    cursor: pointer;
+    &:hover{
+      background: #FF6C00;
+      border: 1px solid #FF6C00;
+      color: #fff;
+      transition: 0.5S;
+    }
+  }
+}
+
+.content{
+  h5{
+    font-size: nth($list: $font, $n:5 );
+    margin-bottom: 16px;
+  }
+  .songList{
+    width: 100%;
+
+    margin-bottom: 32px;
+    tr{
+      border-bottom: 1px solid rgba(black,0.2);
+    }
+    td{
+      vertical-align: middle;
+      position: relative;
+      
+      img{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        // display: block;
+        // transform: translateY(2px);
+        &.pause{
+          display: none;
+        }
+      }
+
+      &.active{
+        img{
+          &.pause{
+            display: block;
+          }
+          &.play{
+            display: none;
+          }
+        }
+      }
+    }
+    td:nth-of-type(1){
+      width: 96px;
+    }
+    td:nth-of-type(4){
+      width: 24px;
+      cursor: pointer;
+
+    }
+  }
+  .newRelease{
+    box-sizing: border-box;
+    max-width:100% ;
+    font-size: 0;
+    line-height: 160px;
+    margin-bottom: 32px;
+    display: inline-block;
+    .album__cover{
+      vertical-align: middle;
+    }
+    &__text{
+      display: inline-block;
+      text-align: center;
+      width: calc(100% - 160px);
+      vertical-align: middle;
+      p:nth-child(1){
+        font-size: 20px;
+        line-height: 1.2;
+      }
+      p:nth-child(2){
+        font-size: 16px;
+        line-height: 1.2;
+      }
+    }
+  } 
+}
+.album__cover{
+  @include size(160px,160px);
+  max-width: 100%;
+  display: inline-block;
+}
+.albums{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  &__name{
+    font-weight: bold;
+  }
+  &__year{
+    font-size: 14px;
+  }
+}
+.recommend{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  
+  .album__cover--round{
+    border-radius: 50%;
+  }
+  &__name{
+    display: block;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    
+    &:hover{
+      color: blue;
+      text-decoration: underline;
+      transform: translateY(-1px);
+      transition: 0.2s;
+    }
+  }
+}
+
+.player{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 720px;
+  height: 96px;
+  background-color: gray;
+  display: inline-block;
+  // background: #000;
+  @extend %clearfix;
+  li{
+    position: relative;
+    float: left;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &__group1{
+    width: 96px;
+    height: 100%;
+    background:url('../images/pop/photo-1512413914633-b5043f4041ea.jpg');
+    background-size: cover;
+    margin-right: 16px;
+  }
+  &__group2{
+    margin-right: 110px;
+    p:nth-child(1){
+      font-size: 16px;
+      font-weight: bold;
+    }
+    p:nth-child(2){
+      font-size: 14px;
+    }
+  }
+  &__group3{
+    margin-right: 67px;
+    &:before,&:after{
+      display: inline-block;
+      content: "";
+      @include size(24px,24px);
+      vertical-align:middle;
+    }
+    &:before{
+      background: url("../images/pop/round-skip_previous-24px.svg");
+    }
+    &:after{
+      background: url("../images/pop/round-skip_next-24px.svg");
+    }
+    img{
+      @include size(48px,48px);
+      vertical-align:middle;
+      margin: 0 16px;
+    }
+  }
+  &__group4{
+    &:after{
+      display: inline-block;
+      content: '';
+      width: 90px;
+      height: 2px;
+      background: #fff;
+      vertical-align: middle;
+      margin-right: 16px;
+    }
+    img{
+      vertical-align: middle;
+    }
+  }
+  svg{
+    @include size(24px,24px);
+  }
+}
